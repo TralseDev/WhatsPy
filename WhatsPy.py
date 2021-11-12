@@ -38,13 +38,17 @@ def _login():
 
     binary = FirefoxBinary(browser_binary)
     
-    if OS == "Linux":
-        driver = webdriver.Firefox(
-            service=Service(geckodriver_path), firefox_binary=binary)
+    try:
+        if OS == "Linux":
+            driver = webdriver.Firefox(
+                service=Service(geckodriver_path), firefox_binary=binary)
 
-    if OS == "Windows":
-        driver = webdriver.Firefox(
-             geckodriver_path, firefox_binary=binary)
+        if OS == "Windows":
+            driver = webdriver.Firefox(
+                 geckodriver_path, firefox_binary=binary)
+    except Exception as e:
+        print(f"{YELLOW}[{RED}-{YELLOW}]{RED} An error occoured: {e}It looks like you didn't change firefox and geckodriver path. If both paths are right but you still get this error, please feel free to submit it here: {LIGHT_GREEN}https://github.com/TralseDev/WhatsPy")
+        exit(-1)
         
     driver.get(url)
     print("> Ready to scan QRCode... Type in `y` if finished scanning QRCode:")
