@@ -1,4 +1,5 @@
 import time
+import platform
 import datetime
 import argparse
 from selenium import webdriver
@@ -23,6 +24,8 @@ WHITE = '\x1b[47m'
 LIGHT_RED = '\x1b[91m'
 LIGHT_BLUE = '\x1b[94m'
 
+OS = platform.platform().split('-', 1)[0]
+
 
 class CanNotGetUserName(Exception):
     """
@@ -34,9 +37,15 @@ def _login():
     global driver
 
     binary = FirefoxBinary(browser_binary)
-    driver = webdriver.Firefox(
-        service=Service(geckodriver_path), firefox_binary=binary)
+    
+    if OS == "Linux":
+        driver = webdriver.Firefox(
+            service=Service(geckodriver_path), firefox_binary=binary)
 
+    if OS == "Windows":
+        driver = webdriver.Firefox(
+             geckodriver_path, firefox_binary=binary)
+        
     driver.get(url)
     print("> Ready to scan QRCode... Type in `y` if finished scanning QRCode:")
     time.sleep(0.1)
