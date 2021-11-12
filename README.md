@@ -9,7 +9,7 @@ WhatsPy is a simple spyware written in Python to spy on whatsapp users. How? Wha
 ## Getting Started
 
 ### __Warning__
-**Use BAF for *educational proposes* only! The contributors *aren't responsible* for the *damage* made by this tool!**
+**Use WhatsPy for *educational proposes* only! The contributors *aren't responsible* for the *damage* made by this tool!**
 
 ### Installation
 Python version 3.5 - 3.9
