@@ -17,7 +17,13 @@ Python version 3.5 - 3.9
 git clone https://github.com/TralseDev/WhatsPy.git
 ```
 
+#### Windows:
 geckodriver.exe (Firefox geckodriver). Check out folder, there's the binary.
+
+#### Linux:
+```
+sudo apt install eyewitness
+```
 
 ### Executing program
 ```
