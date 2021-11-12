@@ -4,6 +4,7 @@ import argparse
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
+from selenium.webdriver.firefox.service import Service
 
 
 url = "https://web.whatsapp.com/"
@@ -34,7 +35,7 @@ def _login():
 
     binary = FirefoxBinary(browser_binary)
     driver = webdriver.Firefox(
-        geckodriver_path, firefox_binary=binary)
+        service=Service(geckodriver_path), firefox_binary=binary)
 
     driver.get(url)
     print("> Ready to scan QRCode... Type in `y` if finished scanning QRCode:")
