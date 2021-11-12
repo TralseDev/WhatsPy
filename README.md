@@ -4,7 +4,8 @@ WhatsPy is created to spy on whatsapp contacts.
 
 ## Description
 
-WhatsPy is a simple spyware written in Python to spy on whatsapp users. How? Whatsapp doesn't allow users to appear offline.
+WhatsPy is a simple spyware written in Python to spy on whatsapp users without being online. How? Whatsapp doesn't allow users to appear offline.
+Start WhatsPy and minimize the opened browser, so you won't appear online.
 
 ## Getting Started
 
